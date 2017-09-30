@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="C:\Users\Nick\Desktop\Hackathon\Website CSS.css"/>
+        <title>MadeFromConcentrate</title>
+        <script>
+            function startTime() {
+            var today = new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML=
+            h + ":" + m + ":" + s;
+            var t =setTimeout(startTime, 500);
+                 
+        }
+            function checkTime(i){
+            if (i<10){i= "0" +i};
+            return i;
+
+        }
+        </script>
+    </head>
+<body onload= "startTime()">
+    <div id="txt"></div>
+
+    <div>
+        <a class="button" href="#">Create a To Do List</a>
+    </div>
+
+
+    <!-- set rotating qoutes with background pictures-->
+
+    <div class="quotes"> 
+        <p class="words" style="width: 830px; margin-left: 82%; margin-top: 40%;">"The late bird might get a worm too, but the early bird gets the first pick."</p>
+        <p class="words" style="margin-top: 41.5%; margin-left: 6%; width: 1400px;">"A journey of a million miles begins with one step."</p>
+        <p class="words" style="margin-top: 72%; margin-left:100%; width: 750px;">"Only I can change my life. No one can do it for me."</p>
+        <p class="words" style="margin-top: 72%; margin-left:100%; width: 750px;">When you feel like quitting is when you should never quit. Push through."</p>
+        <p class="words" style="margin-top: 40%; margin-left:20%; width: 1200px">The practice when no one is watching is what creates spectacles when everyone is."</p>
+    </div>
+        <script>
+
+            var myIndex = 0;
+            rotatequotes();
+            
+            function rotatequotes() {
+                var x = document.getElementsByClassName("words");
+                //x = shuffle(x);
+                for (var i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                myIndex++;
+    
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(rotatequotes, 8000);
+            } 
+            function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+        </script>
+
+    <!--coding to set a background image loop-->
+
+    <div class="background">
+        <img class="pictures" src="stretch.jpg">
+        <img class="pictures" src="stairs.jpg">
+        <img class="pictures" src="pray.jpg">
+        <img class="pictures" src="bridge.jpg">
+        <img class="pictures" src="basketball.jpg">
+    </div>
+
+    <script>
+        var myIndex1 = 0;
+        rotatepictures()
+
+        function rotatepictures() {
+            var x = document.getElementsByClassName("pictures");
+            for (var j = 0; j < x.length; j++) {
+                x[j].style.display = "none";  
+            }
+            myIndex1++;
+
+            if (myIndex1 > x.length) {myIndex1 = 1}    
+            x[myIndex1-1].style.display = "block";  
+            setTimeout(rotatepictures, 8000);
+        }
+    </script> 
+</body>
+<footer>
+</footer>
+<html>

@@ -13,26 +13,42 @@ img {
 .quotes{
     font-size: 40px;
     font-family: 'Roboto Slab', serif;
-    position: fixed;
-    color: #FFFFFF;
+    font-weight: 400;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    margin-top: 24%;
+    width: 100%; 
+    -webkit-animation: mymove 8s infinite;
+    -webkit-animation-timing-function: linear;
+
 }
+@-webkit-keyframes mymove {
+    from {opacity: .99;}
+    to {opacity: .33;}
+}
+
+
 
 #txt{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 900;
-    font-size: 45px;
-    color: whitesmoke;
+    font-size: 60px;
+    color: white;
+    opacity: .7;
     text-align: right;
-    top: 5%;
-    right: 5%;
+    top: 30%;
+    left: 40.5%;
     position: absolute;
     text-shadow: 1px 1px 0 #000, -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
+}
+#txt:hover{
+    opacity: .45;
 }
 
 #button{
-    background-color: gold;
-    border-radius: 8px;
+    background-color: rgba(247, 201, 103, 0.82);
     color: black;
     text-align: center;
     position: fixed;
@@ -40,10 +56,23 @@ img {
     text-decoration: none;
     padding: 15px 15px;
     font-size: 30px;
-    left: 4%;
-    top: 5%;
+    top: 71%;   
+    left: 40%; 
 
 } 
+#button:hover{
+    opacity: .7;
 
+}
+
+#link{
+    position: absolute;
+}
+/*
+.words:hover{ 
+    font-size: 50px;
+
+}
+*/
 
 
